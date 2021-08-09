@@ -9,6 +9,7 @@ function FakeStore() {
   
     const dispatch = useDispatch();
     const products = useSelector(state => state.products);
+    console.log(products);
     
     useEffect(() => {
         dispatch(getProducts())
