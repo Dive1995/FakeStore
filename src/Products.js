@@ -4,6 +4,7 @@ import Sidebar from './Sidebar'
 import {useSelector} from 'react-redux'
 
 
+
 function Products() {
     const products = useSelector(state => state.products.products)
     // console.log(products);
@@ -33,8 +34,10 @@ function Products() {
 
     // console.log(categorizedProducts);
 
-    // if(isLoading === "loading"){
-    //     return <div className="loading"></div>
+    // if(products.length < 1){
+    //     return <div product-loading>
+    //         <div className="loading">sfd</div>
+    //     </div>
     // }
 
     return (
@@ -47,8 +50,9 @@ function Products() {
                 <div className="product-main-content">
                     <div className="content">
                         <h3>{currentCategory}</h3>
+                        {products.length < 1 && <div className="loading"></div>}
                         {categorizedProducts.length < 1 && <h5>No products found</h5>}
-                        {categorizedProducts && categorizedProducts.map(item => <MainProductList {...item}/>)}
+                        {products.length > 1 && categorizedProducts && categorizedProducts.map(item => <MainProductList {...item}/>)}
                     </div>
                 </div>
             </div>

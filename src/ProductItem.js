@@ -1,8 +1,9 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 function ProductItem({id,title,image,price,description,category}) {
     return (
-        <div className='product-item card' key={id}>
+        <Link to={`/product/${id}`} className='product-item card' key={id}>
             <div className="card-image" >
                 <img src={image} alt={title} className="img" />
             </div>
@@ -12,7 +13,7 @@ function ProductItem({id,title,image,price,description,category}) {
                 <div className="card-desc">$ {price}</div>
             </div>
             {/* <div className="card-button"></div> */}
-        </div>
+        </Link>
     )
 }
 

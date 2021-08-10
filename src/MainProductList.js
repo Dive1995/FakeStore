@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link, useParams} from 'react-router-dom'
 
 function MainProductList({id,price,title,description,image}) {
 
@@ -8,11 +9,13 @@ function MainProductList({id,price,title,description,image}) {
                 <img src={image} alt="" />
             </div>
             <div className="content">
-                <h4>{title}</h4>
+                <Link to={`/product/${id}`} className='see-product'>
+                    <h4>{title}</h4>
+                </Link>
                 <h5>$ {price}</h5>
                 <p>{description}</p>
                 {/* <button className="btn-outline">See Product</button> */}
-                <a href="" className='see-product'>See product > </a>
+                <Link to={`/product/${id}`} className='see-product'>See product > </Link>
             </div>
         </div>
     )

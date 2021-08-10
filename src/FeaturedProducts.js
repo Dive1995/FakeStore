@@ -45,10 +45,10 @@ function FeaturedProducts() {
                 <div className="title-underline"></div>
                 <div className="category-tabs">
                     {/* display all categories */}
-                    {categories.map(category => <Categories activeTab={activeTab} handleCategories={handleCategories} category={category}/>)}
+                    {categories.map((category, index) => <Categories key={index} activeTab={activeTab} handleCategories={handleCategories} category={category}/>)}
                 </div>
                 <div className="cards">
-                    {categorizedProducts.map(product => <ProductItem {...product}/>)}
+                    {categorizedProducts.map(product => <ProductItem key={product.id} {...product}/>)}
                 </div>
             </div>
         </div>
