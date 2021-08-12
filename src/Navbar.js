@@ -4,9 +4,7 @@ import {useParams, Link, NavLink, useLocation} from 'react-router-dom'
 
 function Navbar() {
     const cart = useSelector(state => state.products.cart.map(item => item.count))
-    console.log(cart);
     let totalCount = cart.reduce((total, item) => {
-        console.log(item);
         return parseInt(item) + total
     },0)
 
