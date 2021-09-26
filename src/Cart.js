@@ -13,9 +13,6 @@ function Cart() {
 
     const dispatch = useDispatch()
 
-    useEffect(() => {
-       console.log("Cart rendered");
-    })
 
     let combined = [];
 

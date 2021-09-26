@@ -20,7 +20,7 @@ function FeaturedProducts() {
     useEffect(() => {
         filterProducts(categories[0]);
         setActiveTab(categories[0]);
-    },[products, categories])
+    },[products])
 
     const filterProducts = (category) => {
         const prod = products.filter(product => product.category === category)
