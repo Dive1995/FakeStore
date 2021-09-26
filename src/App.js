@@ -1,10 +1,5 @@
-import FakeStore from "./FakeStore";
 import Navbar from './Navbar'
-import Header from './Header'
-import Sidebar from "./Sidebar";
 import Products from "./Products"
-import TrendingNow from "./TrendingNow";
-import FeaturedProducts from "./FeaturedProducts";
 import { useDispatch } from "react-redux";
 import { getProducts } from "./redux/productSlice";
 import { useEffect } from "react";

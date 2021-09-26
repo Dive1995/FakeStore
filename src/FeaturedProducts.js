@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
-import {useSelector, useDispatch } from 'react-redux'
+import {useSelector} from 'react-redux'
 import ProductItem from './ProductItem';
-import {getProductCategory, getProducts} from './redux/productSlice'
 import Categories from './Categories'
 
 
@@ -21,7 +20,7 @@ function FeaturedProducts() {
     useEffect(() => {
         filterProducts(categories[0]);
         setActiveTab(categories[0]);
-    },[products])
+    },[products, categories])
 
     const filterProducts = (category) => {
         const prod = products.filter(product => product.category === category)

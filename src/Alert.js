@@ -8,7 +8,7 @@ function Alert({alert, removeAlert}) {
         },3000)
 
         return () => clearTimeout(timeout)
-    },[alert])
+    },[alert, removeAlert])
 
     return (
         <div>

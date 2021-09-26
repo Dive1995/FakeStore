@@ -15,7 +15,7 @@ function MainProductList({id,price,title,description,image}) {
                 <h5>$ {price}</h5>
                 <p>{description}</p>
                 {/* <button className="btn-outline">See Product</button> */}
-                <Link to={`/product/${id}`} className='see-product'>See product > </Link>
+                <Link to={`/product/${id}`} className='see-product'>See product &lt;</Link>
             </div>
         </div>
     )

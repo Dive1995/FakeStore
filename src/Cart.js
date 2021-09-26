@@ -1,8 +1,9 @@
-import React,{useEffect, useState} from 'react'
+import React,{useEffect} from 'react'
 import { useSelector } from 'react-redux'
 import CartItem from './CartItem'
 import {useDispatch} from 'react-redux'
 import {removeItem, increaseItemCount, decreaseItemCount} from './redux/productSlice'
+import { Link } from 'react-router-dom'
 
 function Cart() {
     let cart = []
@@ -34,7 +35,7 @@ console.log(combined);
 
     const decreaseCount = (id, quantity) => {
         console.log(quantity);
-        if(quantity == 1){
+        if(Number(quantity) === 1){
             dispatch(removeItem(id));
             // setCombined(combined.filter(item => item.id !== id))
         }
@@ -52,7 +53,8 @@ console.log(combined);
             {combined.map(item => <CartItem increaseCount={increaseCount} decreaseCount={decreaseCount} {...item}/>)}
             <div className="cart-footer">
                 <div className="card-add-more">
-                    <button className="btn ">Continue Shopping</button>
+                    {/* <button className="btn ">Continue Shopping</button> */}
+                    <Link to="/products" className='btn'>Continue Shopping</Link>
                 </div>
                 <div className="cart-checkout">
                     <button className="btn-outline">Checkout</button>
